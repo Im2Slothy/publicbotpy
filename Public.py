@@ -62,7 +62,7 @@ async def on_message_edit(message_before, message_after):
 async def on_raw_reaction_add(payload):  # Requires Intents.reactions
     channel = client.get_channel(1234)#log channel id
     guild = client.get_guild(payload.guild_id)
-    role = discord.utils.get(guild.roles, id=1234)#log channel id
+    role = discord.utils.get(guild.roles, id=1234)#role id
 
     if str(payload.emoji) == "👌":
         await payload.member.add_roles(role, atomic=True)
